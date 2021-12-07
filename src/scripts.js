@@ -49,11 +49,11 @@ function checkHours() {
         if (hour > currentHourNumber) hourEl.next().addClass("future")
     }
 }
-console.log(eventsArray)
 function retrieveSavedEventsFromLocalStorage() {
     var localStorageArray = JSON.parse(localStorage.getItem("Events"))
     if (localStorageArray !== null) eventsArray = localStorageArray
     console.log(eventsArray)
+    // console.log(eventsArray.attr('time:13'))
     
     
 }
@@ -73,7 +73,6 @@ function renderSavedEvents() {
     }
     
 }
-
 // Functions from event listeners
 function saveOnLocalStorage() {
     localStorage.setItem("Events", JSON.stringify(eventsArray))
@@ -85,13 +84,19 @@ eventDivEl.on('click', '.saveBtn', function () {
         time: hour,
         event: inputText
     }
-    eventsArray.push(eventObject)
-    console.log(eventObject)
-    console.log(inputText)
-    console.log(hour)
+    var previousEventToOverwriteIndex = eventsArray.findIndex ( ({ time }) => time === hour );
+    console.log(previousEventToOverwriteIndex)
+        if(previousEventToOverwriteIndex > -1) {
+            console.log("splice")
+            eventsArray.splice(previousEventToOverwriteIndex, 1, eventObject)
+        } else {
+            console.log("push")
+            eventsArray.push(eventObject)
+
+        }
     saveOnLocalStorage()
 })
-currentHourFormatConverter();
+currentHourFormatConverter()
 checkHours()
 retrieveSavedEventsFromLocalStorage()
 fillEmptyEventsWithPlaceholders()
