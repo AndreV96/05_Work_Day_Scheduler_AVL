@@ -52,8 +52,6 @@ function checkHours() {
 function retrieveSavedEventsFromLocalStorage() {
     var localStorageArray = JSON.parse(localStorage.getItem("Events"))
     if (localStorageArray !== null) eventsArray = localStorageArray
-    console.log(eventsArray)
-    // console.log(eventsArray.attr('time:13'))
     
     
 }
@@ -85,12 +83,9 @@ eventDivEl.on('click', '.saveBtn', function () {
         event: inputText
     }
     var previousEventToOverwriteIndex = eventsArray.findIndex ( ({ time }) => time === hour );
-    console.log(previousEventToOverwriteIndex)
         if(previousEventToOverwriteIndex > -1) {
-            console.log("splice")
             eventsArray.splice(previousEventToOverwriteIndex, 1, eventObject)
         } else {
-            console.log("push")
             eventsArray.push(eventObject)
 
         }
