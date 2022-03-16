@@ -1,4 +1,4 @@
-# Work Day Scheduler
+# Every Day
 
 * Webpage deployed link: https://andrev96.github.io/05_Work_Day_Scheduler_AVL/
 
