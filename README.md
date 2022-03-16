@@ -1,8 +1,8 @@
 # Every Day
 
-* Webpage deployed link: https://andrev96.github.io/05_Work_Day_Scheduler_AVL/
+* Webpage deployed link: https://andrev96.github.io/Every_Day/
 
-* GitHub repository link: https://github.com/AndreV96/05_Work_Day_Scheduler_AVL.git
+* GitHub repository link: https://github.com/AndreV96/Every_Day/
 
 ## List of technologies used:
 
